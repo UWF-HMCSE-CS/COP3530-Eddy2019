@@ -10,11 +10,14 @@ class Fraction
 		Number *denominator;
 	public:
 		Fraction(int numerator, int denominator);
+		Fraction(const Fraction &other);
 		int GetNumerator();
-		Number GetDenominator();
+		int GetDenominator();
 
-		void SetNumerator(Number newNumerator);
-		void SetDenominator(Number newDenominator);
+		void SetNumerator(int newNumerator);
+		void SetDenominator(int newDenominator);
+
+		~Fraction();
 };
 
 #endif

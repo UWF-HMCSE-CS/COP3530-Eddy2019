@@ -1,4 +1,5 @@
 #include "Fraction.hpp"
+#include <iostream>
 
 Fraction::Fraction(int numerator, int denominator)
 {
@@ -6,22 +7,42 @@ Fraction::Fraction(int numerator, int denominator)
 	this->denominator = new Number(denominator);
 }
 
+Fraction::Fraction(const Fraction &other)
+{
+	std::cout << "Copy Constructor" << std::endl;
+	numerator = new Number( other.numerator->GetValue() );
+	denominator = new Number( other.denominator->GetValue()  );
+}
+
 int Fraction::GetNumerator()
 {
 	return this->numerator->GetValue();
 }
 
-Number Fraction::GetDenominator()
+int Fraction::GetDenominator()
 {
-	return this->denominator;
+	return this->denominator->GetValue();
 }
 
-void Fraction::SetNumerator(Number newNumerator)
+void Fraction::SetNumerator(int newNumerator)
 {
-	this->numerator = newNumerator;
+	this->numerator->SetValue(newNumerator);
 }
 
-void Fraction::SetDenominator(Number newDenominator)
+void Fraction::SetDenominator(int newDenominator)
 {
-	this->denominator = newDenominator;
+	this->denominator->SetValue(newDenominator);
 }
+
+Fraction::~Fraction()
+{
+	delete this->numerator;
+	delete this->denominator;
+}
+
+
+
+
+
+
+
