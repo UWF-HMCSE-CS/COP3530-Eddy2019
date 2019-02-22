@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <string>
 
 template<typename T>
 Node<T>::Node()
@@ -32,8 +33,8 @@ Node<T>* Node<T>::GetNext()
 	return this->next;
 }
 
-
-
+template class Node<int>;
+template class Node<double>;
 
 
 

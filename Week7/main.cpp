@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include "node.hpp"
+#include "linked_list.hpp"
 
 int main()
 {
@@ -11,6 +13,12 @@ int main()
 	if(24 == newNode->GetNext()->GetValue())
 		std::cout << "GetNext passed" << std::endl;
 	Node<double>* doubleNode = new Node<double>(3.678);
-	std::cout << doubleNode->GetValue() << std::endl;
+	if((3.678 - doubleNode->GetValue() < .001) && (3.678 - doubleNode->GetValue() > -.001))
+		std::cout << "Double worked" << std::endl;
+
+	LinkedList<int>* linkedList = new LinkedList<int>();
+	linkedList->InsertAtHead(5);
+	linkedList->Print();
+
 	return 0;
 }
