@@ -18,6 +18,7 @@ int main()
 
 	LinkedList<int>* linkedList = new LinkedList<int>();
 	linkedList->InsertAtHead(5);
+	linkedList->InsertAtHead(4);
 	linkedList->Print();
 
 	return 0;

@@ -18,8 +18,15 @@ void LinkedList<T>::InsertAtHead(T value)
 template<class T>
 void LinkedList<T>::Print()
 {
-	std::cout << this->head->GetValue() << std::endl;
+	Node<T>* currentNode = this->head;
+	while(currentNode != nullptr)
+	{
+		std::cout << currentNode->GetValue() << std::endl;
+		currentNode = currentNode->GetNext();
+	}
 
 }
+
+
 
 template class LinkedList<int>;
