@@ -8,16 +8,22 @@ void depthFirstSearch(int graph[6][6], int start)
 	int visited[6] = {0, 0, 0, 0, 0, 0};
 	visited[start] = 1;
 	path.push(start);
-	int currentIndex = start;
-	for(int vertex = 0; vertex < 6; ++vertex)
+	int currentIndex;
+	while(!path.empty())
 	{
-		if((graph[currentIndex][vertex] == 1) && (visited[vertex] == 0))
+		currentIndex = path.top();
+		for(int vertex = 0; vertex < 6; ++vertex)
 		{
-			std::cout << vertex << std::endl;
-			path.push(vertex);
-			visited[vertex] = 1;
-			currentIndex = vertex;
+			if((graph[currentIndex][vertex] == 1) && (visited[vertex] == 0))
+			{
+				std::cout << vertex << std::endl;
+				path.push(vertex);
+				visited[vertex] = 1;
+				currentIndex = vertex;
+				vertex = 0;
+			}
 		}
+		path.pop();
 	}
 }
 

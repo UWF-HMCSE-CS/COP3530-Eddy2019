@@ -7,6 +7,7 @@ class Node
 	private:
 		T value;
 		Node* next;
+		Node* prev;
 	public:
 		Node();
 		Node(T value);
